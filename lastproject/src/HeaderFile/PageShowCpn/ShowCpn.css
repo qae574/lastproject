@@ -1,0 +1,207 @@
+.headItem > h1 {
+ color: white;
+}
+.imgHead img {
+ height: 750px;
+  width:100%;
+}
+.midContainer {
+  padding-left: 50px;
+  display: flex;
+  gap: 300px;
+}
+.midContaiLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.content  {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.content >h2,p {
+  color: white;
+}
+.content >p {
+  color: white;
+}
+.checkbox {
+  width: 500px;
+  
+}
+.insiteBox {
+  display: flex;
+  gap: 10px;
+  background-color: #12232E;
+  width: 200px;
+  height: 40px;
+  align-items: center;
+  padding: 20px 10px 20px 30px;
+  border-radius: 10px;
+}
+.insiteBox  > p {
+  color: white;
+  
+}
+.checkbox  > h2 {
+  color: white;
+}
+.controlBox {
+  display: flex;
+  /* width: 300px; */
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.info  h2{
+  color: white;
+  padding-left: 50px;
+}
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.user{
+  display: flex;
+  gap: 40px;
+  background-color: #071620;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 10px;
+  width: 600px;
+}
+.writting {
+ gap: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.writting > P {
+  color: white;
+}
+.writting > h2 {
+  color: white;
+
+}
+.imgAndcontent {
+ display: flex;
+ gap: 10px;
+}
+.imgAndcontent img {
+  width: 40px;
+  height: 40px;
+}
+.imgAndPersoncontent img {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+}
+.imgAndPersoncontent {
+  display: flex;
+  gap: 10px;
+}
+.price button {
+  color: blue;
+  border-radius: 10px;
+  border: 1px solid #007CC7;
+  background-color: black;
+  width: 160px;
+  height: 60px;
+  font-size: 25px;
+  cursor: pointer;
+}
+.detailItem h2 {
+  color: white;
+}
+.detailItem {
+  padding-top: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  background-color: #071620;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 350px;
+}
+.itemWritting {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.itemWritting p{
+  color: white;
+}
+.writting {
+  display: flex;
+  gap: 20px;
+}
+.itemWrittingContent {
+  display: flex;
+  justify-content: space-between;
+}
+.itemWrittingContent > span {
+  color: white;
+}
+.contactControl {
+  display: flex;
+  gap: 15px;
+  flex-direction: column;
+}
+.contactControl > h2 {
+  color: white;
+}
+.writtingHere {
+  display: flex;
+  gap: 10px;
+  /* flex-direction: column; */
+}
+.write input {
+  background-color: #152836;
+  padding-left: 10px;
+  height: 30px;
+  border-radius: 5px;
+}
+.write > p {
+  color: white;
+}
+.writee input {
+  background-color: #152836;
+  padding-left: 10px;
+  height: 30px;
+  border-radius: 5px;
+  width: 376px;
+}
+.writee > p {
+  color: white;
+}
+.writeen input {
+  background-color: #152836;
+  padding-left: 10px;
+  height: 30px;
+  border-radius: 5px;
+  width: 376px;
+  height: 100px;
+}
+.writeen > p {
+  color: white;
+}
+.contactControl button {
+  background-color:#007CC7;
+  color: white;
+  border-radius: 10px;
+  height: 50px;
+  width: 376px;
+}
+.locationNmap {
+  display: flex;
+  flex-direction: column;
+  /* width: 500px; */
+}
+.locationNmap img {
+  width: 500px;
+}
+.locationNmap >p,h2 {
+  color: white;
+}

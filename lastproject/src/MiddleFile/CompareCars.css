@@ -1,0 +1,72 @@
+.compare-container {
+    padding: 20px;
+    background: #111;
+    color: white;
+   /* display: flex; */
+  }
+  
+  .car-list {
+    display: flex;
+    gap: 20px;
+   
+  }
+  .car-list-item {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+  }
+  .pricewritten > p{
+    color: blue;
+  }
+  
+  .car-card {
+    border: 1px solid gray;
+    padding: 10px;
+    cursor: pointer;
+    width: 200px;
+    background: #333;
+    text-align: center;
+    transition: 0.3s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .car-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 10px rgba(0, 153, 255, 0.5);
+  }
+  
+  .car-card.selected {
+    border: 2px solid blue;
+  }
+  
+  .car-thumbnail {
+    width: 100%;
+    height: auto;
+  }
+  
+  .comparison-container {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid white;
+    background: #222;
+    color: white;
+  }
+  
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+  }
+  
+  .comparison-table th,
+  .comparison-table td {
+    border: 1px solid white;
+    padding: 10px;
+  }
+  
+  .car-image-compare {
+    /* width: 200px; */
+    height: auto;
+    display: block;
+    margin: 10px auto;
+  }
+  

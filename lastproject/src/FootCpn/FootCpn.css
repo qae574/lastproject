@@ -1,0 +1,40 @@
+.container > p  {
+    color: white;
+}
+.container {
+    background-color: #12232E;
+}
+.head  {
+    background-color: #12232E;
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.head > img {
+    width: 138px;
+    height: 37px;
+}
+.abtUs {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.clineProcessing {
+    display: flex;
+    flex-direction: column;
+}
+.clineProcessing >a {
+    color: white;
+    text-decoration: none;
+}
+.clineProcessing  > img {
+    width: 22px;
+    height: 18px;
+}
+.controlImg {
+    display: flex;
+    gap: 10px;
+}
