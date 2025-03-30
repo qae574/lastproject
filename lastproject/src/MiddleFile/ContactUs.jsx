@@ -26,8 +26,8 @@ const ContactUs = () => {
 
     emailjs
       .send(
-        "service_gychl16",  // Thay bằng Service ID của bạn
-        "uygw9va",          // Thay bằng Template ID của bạn
+        "service_4tr1nda",  // Thay bằng Service ID của bạn
+        "template_n3ulpbf",          // Thay bằng Template ID của bạn
         emailParams,        // Sử dụng emailParams thay vì formData
         "UqhPZJkmt3WNevUiP" // Thay bằng Public Key của bạn
       )

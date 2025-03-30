@@ -33,6 +33,58 @@ function Compare() {
     }
   };
 
+  const renderComparisonTable = () => {
+    if (selectedCars.length < 2) return null; // Chỉ hiển thị bảng so sánh nếu có ít nhất 2 xe
+
+    return (
+      <div className="comparison-table">
+        <h3>Comparison Table</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Attribute</th>
+              {selectedCars.map((car) => (
+                <th key={car.id}>{car.name}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Price</td>
+              {selectedCars.map((car) => (
+                <td key={car.id}>{car.price}</td>
+              ))}
+            </tr>
+            <tr>
+              <td>Year</td>
+              {selectedCars.map((car) => (
+                <td key={car.id}>{car.year}</td>
+              ))}
+            </tr>
+            <tr>
+              <td>Drive Type</td>
+              {selectedCars.map((car) => (
+                <td key={car.id}>{car.driveType}</td>
+              ))}
+            </tr>
+            <tr>
+              <td>Fuel</td>
+              {selectedCars.map((car) => (
+                <td key={car.id}>{car.fuel}</td>
+              ))}
+            </tr>
+            <tr>
+              <td>Reviews</td>
+              {selectedCars.map((car) => (
+                <td key={car.id}>⭐ {car.reviews}</td>
+              ))}
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    );
+  };
+
   return (
     <div className="container">
       <HeaderProps />
@@ -63,6 +115,8 @@ function Compare() {
         )}
       </div>
 
+      {renderComparisonTable()}
+
       {showModal && (
         <div className="modal-overlay">
           <div className="modal-content">
@@ -71,13 +125,11 @@ function Compare() {
               Close
             </button>
 
-            {/* Nút điều hướng */}
             <div className="slider-controls">
               <button onClick={handlePrev} disabled={startIndex === 0}>◀</button>
               <button onClick={handleNext} disabled={startIndex + carsPerPage >= carList.length}>▶</button>
             </div>
 
-            {/* Danh sách xe với phân trang */}
             <ul className="car-list">
               {carList.slice(startIndex, startIndex + carsPerPage).map((car) => (
                 <li

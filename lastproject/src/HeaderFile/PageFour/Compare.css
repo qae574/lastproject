@@ -72,6 +72,10 @@ h2 {
   background: #1e1e1e;
   border-radius: 8px;
   overflow: hidden;
+  margin-left: 10px;
+}
+.comparison-table table {
+  margin-left: 320px;
 }
 
 .comparison-table th, 

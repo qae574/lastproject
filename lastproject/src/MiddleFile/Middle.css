@@ -229,6 +229,7 @@
     flex-direction: column;
     gap: 10px;
     padding-top: 10px;
+    color: white;
   }
   .contactWritten  > P {
     color: white;
@@ -246,6 +247,7 @@
     background-color: #152836;
     border-radius: 10px;
     padding-left: 10px;
+    color: white;
   }
   .contactWrittenInput > p {
     color: white;
