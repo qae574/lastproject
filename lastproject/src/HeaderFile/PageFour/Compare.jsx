@@ -7,6 +7,8 @@ import FootCpn from "../../FootCpn/FootCpn.jsx";
 function Compare() {
   const [selectedCars, setSelectedCars] = useState([]);
   const [showModal, setShowModal] = useState(false);
+  const [startIndex, setStartIndex] = useState(0); // Chỉ mục của xe đầu tiên hiển thị
+  const carsPerPage = 3; // Số xe hiển thị mỗi lần
 
   const handleSelectCar = (car) => {
     if (selectedCars.length < 3 && !selectedCars.find((c) => c.id === car.id)) {
@@ -19,9 +21,21 @@ function Compare() {
     setSelectedCars(selectedCars.filter((car) => car.id !== id));
   };
 
+  const handleNext = () => {
+    if (startIndex + carsPerPage < carList.length) {
+      setStartIndex(startIndex + carsPerPage);
+    }
+  };
+
+  const handlePrev = () => {
+    if (startIndex - carsPerPage >= 0) {
+      setStartIndex(startIndex - carsPerPage);
+    }
+  };
+
   return (
     <div className="container">
-      <HeaderProps/>
+      <HeaderProps />
       <h2>Compare Cars</h2>
       <div className="car-selection">
         {selectedCars.map((car) => (
@@ -48,96 +62,7 @@ function Compare() {
           </div>
         )}
       </div>
-      {selectedCars.length > 0 && (
-        <table className="comparison-table">
-          <thead>
-            <tr>
-              <th>General Info</th>
-              {selectedCars.map((car) => (
-                <th key={car.id}>{car.name}</th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Body Type</td>
-              {selectedCars.map((car) => (
-                <td key={car.id}>{car.bodyType}</td>
-              ))}
-            </tr>
-            <tr>
-              <td>Exterior Color</td>
-              {selectedCars.map((car) => (
-                <td key={car.id}>{car.color}</td>
-              ))}
-            </tr>
-          </tbody>
-        </table>
-      )}
-      {selectedCars.length > 0 && (
-        <table className="comparison-table">
-          <thead>
-            <tr>
-              <th>Engine Details</th>
-              {selectedCars.map((car) => (
-                <th key={car.id}>{car.name}</th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Speed</td>
-              {selectedCars.map((car) => (
-                <td key={car.id}>{car.bodyType}</td>
-              ))}
-            </tr>
-            <tr>
-              <td>Power</td>
-              {selectedCars.map((car) => (
-                <td key={car.id}>{car.power}</td>
-              ))}
-            </tr>
-          </tbody>
-        </table>
-      )}
-      {selectedCars.length > 0 && (
-        <table className="comparison-table">
-          <thead>
-            <tr>
-              <th>Dimension Details</th>
-              {selectedCars.map((car) => (
-                <th key={car.id}>{car.name}</th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Length</td>
-              {selectedCars.map((car) => (
-                <td key={car.id}>{car.Length}</td>
-              ))}
-            </tr>
-            <tr>
-              <td>Width</td>
-              {selectedCars.map((car) => (
-                <td key={car.id}>{car.Width}</td>
-              ))}
-            </tr>
-            <tr>
-              <td>Height</td>
-              {selectedCars.map((car) => (
-                <td key={car.id}>{car.Height}</td>
-              ))}
-            </tr>
-            <tr>
-              <td>Cargo Volume</td>
-              {selectedCars.map((car) => (
-                <td key={car.id}>{car.Cargo}</td>
-              ))}
-            </tr>
-          </tbody>
-        </table>
-      )}
+
       {showModal && (
         <div className="modal-overlay">
           <div className="modal-content">
@@ -145,8 +70,16 @@ function Compare() {
             <button className="close-btn" onClick={() => setShowModal(false)}>
               Close
             </button>
+
+            {/* Nút điều hướng */}
+            <div className="slider-controls">
+              <button onClick={handlePrev} disabled={startIndex === 0}>◀</button>
+              <button onClick={handleNext} disabled={startIndex + carsPerPage >= carList.length}>▶</button>
+            </div>
+
+            {/* Danh sách xe với phân trang */}
             <ul className="car-list">
-              {carList.map((car) => (
+              {carList.slice(startIndex, startIndex + carsPerPage).map((car) => (
                 <li
                   key={car.id}
                   className="car-item"
@@ -162,7 +95,8 @@ function Compare() {
           </div>
         </div>
       )}
-      <FootCpn/>
+
+      <FootCpn />
     </div>
   );
 }
